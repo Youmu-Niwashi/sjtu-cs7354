@@ -1,0 +1,45 @@
+git clone https://github.com/Youmu-Niwashi/sjtu-cs7354.git
+
+==========Task1==========
+git checkout -b feature-newFunc
+git commit -a -m "Added diary entry for feature work"
+
+git commit -a -m "Added another diary entry for feature work"
+
+git log --oneline
+git rebase -i 9717238
+git checkout main
+git merge feature-newFunc
+
+==========Task2==========
+git checkout main
+git log --oneline --graph --all
+git cherry-pick d58314c
+git push origin
+
+==========Task3==========
+git checkout dev
+git log --oneline
+git revert HEAD~2..HEAD
+git rebase -i 7e98124
+git status
+git push origin
+
+==========Task4==========
+git checkout main
+git commit -a -m "modify font"
+git checkout feature-upload
+git diff main
+git merge main
+// resolve merge conflicts
+git commit -a -m "merge features to main" 
+git checkout main
+git merge feature-upload
+git push origin
+
+==========Task5==========
+git checkout -b documentation --track origin/documentation
+git rebase -i HEAD~4
+git checkout main
+git merge documentation
+git push origin
